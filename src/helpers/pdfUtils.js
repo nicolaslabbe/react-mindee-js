@@ -10,7 +10,7 @@ const getImageFromPage = (pdf: any, pageNumber) =>
       .then(function (page) {
         const canvas = document.createElement("canvas")
         const context = canvas.getContext("2d")
-        const viewport = page.getViewport({ scale: 1 })
+        const viewport = page.getViewport({ scale: 5 })
         canvas.height = viewport.height
         canvas.width = viewport.width
         var renderContext = {
@@ -54,7 +54,7 @@ export const getPDFData = (file: File | String): any =>
       pdf.getPage(1).then(function (page) {
         const canvas = document.createElement("canvas")
         const context = canvas.getContext("2d")
-        const viewport = page.getViewport({ scale: 1 })
+        const viewport = page.getViewport({ scale: 5 })
         canvas.height = viewport.height
         canvas.width = viewport.width
         var renderContext = {
